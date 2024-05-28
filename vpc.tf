@@ -137,7 +137,7 @@ resource "aws_route_table_association" "pvtasc1" {
 
 # ASCPVT SUB 2
 resource "aws_route_table_association" "pvtasc2" {
-  subnet_id      = aws_subnet.pvtsub1.id
+  subnet_id      = aws_subnet.pvtsub2.id
   route_table_id = aws_route_table.pvtrt2.id
 }
 
@@ -217,7 +217,7 @@ resource "aws_security_group" "pub_sec" {
 
 # PVT seg
 resource "aws_security_group" "pvt_sec" {
-  name        = "allow_tls"
+  name        = "allow_ssh"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.myvpc.id
 
